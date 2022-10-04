@@ -16,11 +16,11 @@ jobs:
 
     steps:
       - name: create env file
-      - run: |
-        touch .env
-        echo GOOGLE_SA_CLIENT_EMAIL=${{ secrets.GOOGLE_SA_CLIENT_EMAIL }} >> .env
-        echo GOOGLE_SA_PROJECT_ID=${{ secrets.GOOGLE_SA_PROJECT_ID }} >> .env
-        echo GOOGLE_SA_PRIVATE_KEY=${{ secrets.GOOGLE_SA_PRIVATE_KEY }} >> .env
+        run: |
+          touch .env
+          echo GOOGLE_SA_CLIENT_EMAIL=${{ secrets.GOOGLE_SA_CLIENT_EMAIL }} >> .env
+          echo GOOGLE_SA_PROJECT_ID=${{ secrets.GOOGLE_SA_PROJECT_ID }} >> .env
+          echo GOOGLE_SA_PRIVATE_KEY=${{ secrets.GOOGLE_SA_PRIVATE_KEY }} >> .env
 
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
