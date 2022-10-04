@@ -6,7 +6,7 @@ describe("Test User Endpoint", () => {
   it("tests GET /api/user endpoints", async () => {
     expect(true).toEqual(true);
     const response = await request(app).get(
-      "/api/user/xSJzkd4sgkVCy5MygaDbDib7CCo1"
+      "http://localhost:5000/api/user/xSJzkd4sgkVCy5MygaDbDib7CCo1"
     );
     expect(response.body).toEqual({
       _id: "632a3986939329bde8ea9eae",

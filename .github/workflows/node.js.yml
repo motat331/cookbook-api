@@ -21,6 +21,7 @@ jobs:
       GOOGLE_SA_PRIVATE_KEY: ${{ secrets.GOOGLE_SA_PRIVATE_KEY }}
       BUCKET_URL: ${{ secrets.BUCKET_URL }}
       ENV: ${{ secrets.ENV }}
+      PORT: 5000
 
     steps:
       - uses: actions/checkout@v3
