@@ -8,7 +8,6 @@ const certificate: any = {
   private_key: process?.env?.GOOGLE_SA_PRIVATE_KEY?.replace(/\\n/g, "\n"),
   client_email: process.env.GOOGLE_SA_CLIENT_EMAIL,
 };
-console.log("CERTIFICATE", certificate);
 initializeApp({
   credential: cert(certificate),
 });
