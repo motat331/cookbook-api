@@ -18,3 +18,5 @@ app.use("/api", authMiddleware, storageRouter);
 app.listen(port, () => {
   console.log(`🚀 server started at http://localhost:${port}`);
 });
+
+export { app };
