@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+        mongodb-version: [5.0.12]
 
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
