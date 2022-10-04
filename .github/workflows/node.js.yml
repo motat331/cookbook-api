@@ -24,6 +24,8 @@ jobs:
           echo BUCKET_URL=${{ secrets.BUCKET_URL }} >> .env
           echo ENV=${{ secrets.ENV }} >> .env
           echo MONGO_URI=${{ secrets.MONGO_URI }} >> .env
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
 
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
