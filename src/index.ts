@@ -1,13 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
+import { dbConnect } from "./dbConnect";
+dbConnect();
 import { router as userRouter } from "./routes/users";
 import { router as recipeRouter } from "./routes/recipes";
 import { router as storageRouter } from "./routes/storage";
-import { dbConnect } from "./dbConnect";
 import authMiddleware from "./middleware/auth";
 
-dotenv.config();
-dbConnect();
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());

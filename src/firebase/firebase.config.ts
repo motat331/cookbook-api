@@ -1,11 +1,13 @@
 import { initializeApp, cert } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { getStorage } from "firebase-admin/storage";
-import { createRequire } from "module";
-const requireFile = createRequire(import.meta.url);
-const CookBook_ServiceAccount_Staging = requireFile("./cookbook-staging.json");
+const certificate: any = {
+  project_id: process.env.GOOGLE_SA_PROJECT_ID,
+  private_key: process?.env?.GOOGLE_SA_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+  client_email: process.env.GOOGLE_SA_CLIENT_EMAIL,
+};
 initializeApp({
-  credential: cert(CookBook_ServiceAccount_Staging),
+  credential: cert(certificate),
 });
 
 const Auth = getAuth();
