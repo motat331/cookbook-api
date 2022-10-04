@@ -15,7 +15,7 @@ app.use("/api", authMiddleware, userRouter);
 app.use("/api", authMiddleware, recipeRouter);
 app.use("/api", authMiddleware, storageRouter);
 
-app.listen(port, () => {
+app.listen(port || 5000, () => {
   console.log(`🚀 server started at http://localhost:${port}`);
 });
 
