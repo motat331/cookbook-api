@@ -15,8 +15,12 @@ app.use("/api", authMiddleware, userRouter);
 app.use("/api", authMiddleware, recipeRouter);
 app.use("/api", authMiddleware, storageRouter);
 
-app.listen(port || 5000, () => {
-  console.log(`🚀 server started at http://localhost:${port}`);
-});
+// app.listen(port || 5000, () => {
+//   console.log(`🚀 server started at http://localhost:${port}`);
+// });
+
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => console.log(`Listening on port ${port}`));
+}
 
 export { app };
