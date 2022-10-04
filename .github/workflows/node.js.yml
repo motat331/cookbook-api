@@ -16,19 +16,13 @@ jobs:
 
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
+      GOOGLE_SA_CLIENT_EMAIL: ${{ secrets.GOOGLE_SA_CLIENT_EMAIL }}
+      GOOGLE_SA_PROJECT_ID: ${{ secrets.GOOGLE_SA_PROJECT_ID }}
+      GOOGLE_SA_PRIVATE_KEY: ${{ secrets.GOOGLE_SA_PRIVATE_KEY }}
+      BUCKET_URL: ${{ secrets.BUCKET_URL }}
+      ENV: ${{ secrets.ENV }}
 
     steps:
-      - name: create env file
-        run: |
-          touch .env
-          echo GOOGLE_SA_CLIENT_EMAIL=${{ secrets.GOOGLE_SA_CLIENT_EMAIL }} >> .env
-          echo GOOGLE_SA_PROJECT_ID=${{ secrets.GOOGLE_SA_PROJECT_ID }} >> .env
-          echo GOOGLE_SA_PRIVATE_KEY=${{ secrets.GOOGLE_SA_PRIVATE_KEY }} >> .env
-          echo BUCKET_URL=${{ secrets.BUCKET_URL }} >> .env
-          echo ENV=${{ secrets.ENV }} >> .env
-          echo MONGO_URI=${{ secrets.MONGO_URI }} >> .env
-
-
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
