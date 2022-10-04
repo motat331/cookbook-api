@@ -15,7 +15,7 @@ describe("Test User Endpoint", () => {
       email: "user@user.com",
       first_name: "Vadim",
     });
-    expect(response.statusCode).toBe(200);
+    expect(response.statusCode).toBe(201);
   });
   it("tests GET /api/user endpoint", async () => {
     const response = await supertest(app).get(
